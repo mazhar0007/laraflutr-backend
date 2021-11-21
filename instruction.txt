@@ -1,0 +1,76 @@
+ //create new project 
+ laravel new forsat-backend
+ 
+ php artisan serve to run server
+ 
+ //create model in lookups folder inside Models with migration and controller
+1. php artisan make:model //Lookups/Category -m -r 
+ 
+2. php artisan make:model //Lookups/Country -m -r
+
+3. php artisan make:model Opportunity -m -r
+
+4. php artisan make:model OpportunityDetail -m -r
+
+5. php artisan make:model Favourite -m -r 
+
+6. php artisan make:model Forum -m -r 
+
+7. php artisan make:model Comment -m -r 
+
+
+//To insert dummy data into database
+8. php artisan make:seeder CategorySeeder
+
+//to seed data into category table
+9. php artisan db:seed   
+
+// insert 100s of 1000s of dummy data at once by using factory
+// laravel default php library fack data genatater link https://github.com/fzaninotto/Faker#
+
+10. php artisan make:factory UserFactory
+
+//create opportunityfactory with model included at header
+11. php artisan make:factory OpportunityFactory --model=Opportunity
+
+//To create Controller and Models with one command
+12. php artisan make:controller VisitTypeAPIController -r --model=VisitType
+
+//To install laravel passport for api authintication
+13. composer require laravel/passport
+
+// The Passport migrations will create the tables your application needs to store OAuth2 clients and access tokens:
+14. php artisan migrate
+
+//the command will create "personal access" and "password grant" clients which will be used to generate access tokens:
+15. php artisan passport:install
+
+// Create Authentication controller
+16. php artisan make:controller  \\API\\Auth\\RegisterController -r --model=User 
+
+17. php artisan make:controller  \\API\\Auth\\LoginController -r --model=User
+
+//Part-8- API Resources
+18. php artisan make:resource Opportinity
+
+//Create Resource inside Resource>Lookups>Category folder
+19. php artisan make:resource \\Lookups\\Category
+
+20. php artisan make:resource User
+
+/* Part-9 Topic Cover: 1) Client side and Server side considerations when we are sending or receiving a request
+ * 2) Route Resources, 3) Named Routes, 4) Route groups, 5) route authentication and 6)override the auto redirect feature
+ * and a message Dependency injection (Auto Inject feature)
+ */
+
+//part-10 Form request validation with OpportunityValidate
+21. php artisan make:request opportunityValidate
+
+
+
+
+
+
+
+
+
